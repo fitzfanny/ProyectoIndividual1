@@ -1,5 +1,11 @@
 import pandas as pd
-from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+import pandas as pd
+from fuzzywuzzy import fuzz
 
 app = FastAPI()
 
@@ -67,3 +73,21 @@ def get_director(nombre_director: str):
         }
     else:
         return {"message": "El director no se encuentra en el dataset"}
+
+count_vectorizer = CountVectorizer(stop_words='english')
+count_matrix = count_vectorizer.fit_transform(films['title'])
+cosine_sim = cosine_similarity(count_matrix, count_matrix)
+
+def get_recommended_movies(title):
+    idx = films.index[films['title'].str.lower() == title.lower().strip()].tolist()[0]
+    sim_scores = list(enumerate(cosine_sim[idx]))
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+    top_indices = [i[0] for i in sim_scores[1:6]]
+    recommended_movies = films['title'].iloc[top_indices].tolist()
+    return recommended_movies
+    templates = Jinja2Templates(directory="templates")
+
+@app.get('/recomendacion/', response_class=HTMLResponse)
+async def recomendacion(request: Request, titulo: str):
+    recommended_movies = get_recommended_movies(titulo)
+    return templates.TemplateResponse("recomendacion.html", {"request": request, "recommended_movies": recommended_movies})
