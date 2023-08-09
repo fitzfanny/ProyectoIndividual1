@@ -21,7 +21,7 @@
  El tercer paso concistió en la IMPLEMENTACION DE APIS (MAIN).
  En el archivo main.py se desarrolló una interfaz, utilizando las bibliotecas de FASTAPI que permite a los usuarios interactuar 
  con el modelo de Machine Learning, al brindarme los datos de entrada necesarios para obtener sus predicciones correspondientes.
- Mediante esta interfaz se pueden hacer consultas y obtener respuestasen tiempo real.
+ Mediante esta interfaz se pueden hacer consultas y obtener respuestas en tiempo real.
  
  Para finalizar realice mi  DESARROLLO DEL MODELO MACHINE LEARNING (MAIN), un sistema basado en recomendacion de peliculas en el 
  cual opté, segun las consignas asignadas, en seleccionar una pelicula y que me devuelva 5 similares. Luego creé una matriz de 
