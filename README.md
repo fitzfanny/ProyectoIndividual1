@@ -15,19 +15,14 @@ SISTEMA DE RECOMENDACION DE PELICULAS
   Y por ultimo se relacionan los datasets para poder acceder a su información por medio de consultas a la API.
   
  El segundo paso para el proyecto consistió en realizar el EDA (Análisis exploratorio de datos).
- Donde realicé estadísticas descriptivas de los campos, distribución de las variables numéricas, matriz de relaciones sobre el 
+ Aquí realicé estadísticas descriptivas de los campos, distribución de las variables numéricas, matriz de relaciones sobre el 
  DataFrame “peliculas".
 
- El tercer paso IMPLEMENTACION DE APIS (MAIN).
- En el archivo main py se desarrollo una interfaz utilizando las bibliotecas FASTAPI,lo que permite a los usuarios interactuar 
- con el modelo de Machine Learning al brindarme los datos de entrada necesarios para obtener sus predicciones correspondientes.
- Mediante esta interfaz se pueden hacer consultas y obtener respuestasen tiempo real,lo que facilita la utilizacion de este y 
- practica del modelo.
-  Ejemplo:
- app = FastAPI()
-
-# Cargamos el dataset en un DataFrame
-films = pd.read_csv('peliculas.csv')
+ El tercer pasoconcistió en la IMPLEMENTACION DE APIS (MAIN).
+ En el archivo main.py se desarrolló una interfaz, utilizando las bibliotecas de FASTAPI que permite a los usuarios interactuar 
+ con el modelo de Machine Learning, al brindarme los datos de entrada necesarios para obtener sus predicciones correspondientes.
+ Mediante esta interfaz se pueden hacer consultas y obtener respuestasen tiempo real.
+ 
 
 # Funciones para los endpoints solicitados
 
@@ -37,10 +32,25 @@ def peliculas_idioma(Idioma: str):
     return f"{count_peliculas} películas fueron estrenadas en idioma {Idioma}"
 
 
+ Para finalizar realice mi  DESARROLLO DEL MODELO MACHINE LEARNING (MAIN), un sistema basado en recomendacion de peliculas en el cual opté, segun las consignas asignadas, en seleccionar una pelicula y que me devuelva 5 similares. Luego creé una matriz de características TF-ID, para calcular el algoritmo de similitud de cosenos.
+ Este modelo ha sido entrenado utilizando los datos preprocesados y preparados. Una vez finalizado el entrenamiento, se procedió a crear el despliegue de la aplicación en RENDER. Este permite poner en funcionamiento el modelo.
+
  
- En el cuarto paso DESARROLLO DEL MODELO MACHINE LEARNING (MAIN).
- 
- 
+PRINCIPALES LIBRERIAS UTILIZADAS:
+  
+📊 Scikit Learn: Utilizado para vectorizar, tokenizar y calcular la similitud coseno. Esta es una librería de ML
+
+🐍Python: Lenguaje de programación principal utilizado en el desarrollo del proyecto.
+
+💻Numpy: Utilizado para realizar operaciones numéricas y manipulación de datos.
+
+🐼Pandas: Utilizado para la manipulación y análisis de datos estructurados.
+
+📈Matplotlib y Seaborn: Utilizados para la visualización de datos y generación de gráficos.
+
+📳FastAPI: Utilizado para crear la interfaz de la aplicación y procesar los parámetros de funciones.
+
+🌐Render: Plataforma utilizada para el despliegue del modelo y la aplicación.
  
  
 
