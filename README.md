@@ -23,6 +23,20 @@ SISTEMA DE RECOMENDACION DE PELICULAS
  con el modelo de Machine Learning al brindarme los datos de entrada necesarios para obtener sus predicciones correspondientes.
  Mediante esta interfaz se pueden hacer consultas y obtener respuestasen tiempo real,lo que facilita la utilizacion de este y 
  practica del modelo.
+  Ejemplo:
+ app = FastAPI()
+
+# Cargamos el dataset en un DataFrame
+films = pd.read_csv('peliculas.csv')
+
+# Funciones para los endpoints solicitados
+
+@app.get('/peliculas_idioma/')
+def peliculas_idioma(Idioma: str):
+    count_peliculas = films[films['original_language'] == Idioma].shape[0]
+    return f"{count_peliculas} películas fueron estrenadas en idioma {Idioma}"
+
+
  
  En el cuarto paso DESARROLLO DEL MODELO MACHINE LEARNING (MAIN).
  
