@@ -21,7 +21,10 @@ SISTEMA DE RECOMENDACION DE PELICULAS
  El tercer paso IMPLEMENTACION DE APIS (MAIN).
  En el archivo main py se desarrollo una interfaz utilizando las bibliotecas FASTAPI,lo que permite a los usuarios interactuar 
  con el modelo de Machine Learning al brindarme los datos de entrada necesarios para obtener sus predicciones correspondientes.
-
+ Mediante esta interfaz se pueden hacer consultas y obtener respuestasen tiempo real,lo que facilita la utilizacion de este y 
+ practica del modelo.
+ 
+ En el cuarto paso DESARROLLO DEL MODELO MACHINE LEARNING (MAIN).
  
  
  
