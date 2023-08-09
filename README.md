@@ -50,6 +50,9 @@ PRINCIPALES LIBRERIAS UTILIZADAS:
 
 Link a la API: https://mlopsi1fanny.onrender.com/docs
 
+
+Link al video: https://clipchamp.com/watch/vPRJZGtIa9l
+
                                                                                                       
 
  
